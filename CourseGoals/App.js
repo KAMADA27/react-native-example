@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { StyleSheet, View, Button, FlatList } from "react-native";
-import  { StatusBar } from 'expo-status-bar';
+import  { StatusBar } from "expo-status-bar";
 
 import GoalInput from "./components/GoalInput";
 import GoalItem from "./components/GoalItem";
