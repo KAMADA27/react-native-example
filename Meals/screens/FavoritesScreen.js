@@ -1,16 +1,18 @@
-import { useContext } from 'react';
-
-import MealsList from '../components/MealList/MealsList';
-import { FavoritesContext } from '../store/context/favorite-context';
-import { MEALS } from '../data/dummy-data';
-import { StyleSheet, Text, View } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 import { useSelector } from 'react-redux';
+// import { useContext } from 'react';
+
+import MealsList from '../components/MealsList/MealsList';
+// import { FavoritesContext } from '../store/context/favorites-context';
+import { MEALS } from '../data/dummy-data';
 
 function FavoritesScreen() {
   // const favoriteMealsCtx = useContext(FavoritesContext);
-  // const favoriteMeals = MEALS.filter(meal => favoriteMealsCtx.ids.includes(meal.id));
   const favoriteMealIds = useSelector((state) => state.favoriteMeals.ids);
-  const favoriteMeals = MEALS.filter(meal => favoriteMealIds.includes(meal.id));
+
+  const favoriteMeals = MEALS.filter((meal) =>
+    favoriteMealIds.includes(meal.id)
+  );
 
   if (favoriteMeals.length === 0) {
     return (
@@ -20,8 +22,10 @@ function FavoritesScreen() {
     );
   }
 
-  return <MealsList items={favoriteMeals} />
+  return <MealsList items={favoriteMeals} />;
 }
+
+export default FavoritesScreen;
 
 const styles = StyleSheet.create({
   rootContainer: {
@@ -34,6 +38,4 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: 'white',
   },
-})
-
-export default FavoritesScreen;
+});

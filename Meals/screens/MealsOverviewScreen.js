@@ -1,6 +1,6 @@
 import { useLayoutEffect } from 'react';
 
-import MealsList from '../components/MealList/MealsList';
+import MealsList from '../components/MealsList/MealsList';
 import { MEALS, CATEGORIES } from '../data/dummy-data';
 
 function MealsOverviewScreen({ route, navigation }) {
@@ -20,8 +20,7 @@ function MealsOverviewScreen({ route, navigation }) {
     });
   }, [catId, navigation]);
 
-
-  return <MealsList items={displayedMeals} />
+  return <MealsList items={displayedMeals} />;
 }
 
 export default MealsOverviewScreen;
